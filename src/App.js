@@ -1,21 +1,22 @@
-import './App.css'
-import Header from './Header'
-import Home from './Home'
-import Checkout from './Checkout'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
- 
+import "./App.css";
+import Header from "./Header";
+import Home from "./Home";
+import Login from "./Login";
+import Checkout from "./Checkout";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/" element={<><Header /><Home /></>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/checkout" element={ <><Header /><Checkout /></>}/>
         </Routes>
       </Router>
     </div>
   );
 }
- 
-export default App
+
+export default App;
